@@ -35,7 +35,7 @@ import "../styles/reset.css"
 		display: grid;
 		grid-template-columns: 
 		[full-start] 1fr
-		[content] minmax(0, 75rem)
+		[content-start] minmax(0, 75rem) [content-end]
 		1fr [full-end];
 		gap: 1rem;
 
@@ -52,6 +52,7 @@ import "../styles/reset.css"
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
+		list-style-type: none;
 		/* justify-content: space-between; */
 		gap: 4rem;
 	}

@@ -38,13 +38,11 @@ throw new Error(    `"${imgPath}" does not exist in glob: "src/assets/**/*.{jpeg
   }
 
     .hero_box {
-    margin-inline-start: 19cqi;
-    margin-inline-end: 30cqi;
-    margin-block-start: 10cqi;
-
+    margin-inline: 15cqi;
+    margin-block-start: 8cqi;
+    margin-block-end: 10cqi;
     display: inline-flex;
-    /* padding: 3rem 3.75rem 3.625rem 3.75rem; */
-    padding: 3cqi 3.75cqi 3.625cqi 3.75cqi;
+    padding: 3rem 3.75rem 3.625rem 3.75rem;
     flex-direction: column;
     align-items: flex-start;
     gap: 0.625rem;
@@ -52,6 +50,8 @@ throw new Error(    `"${imgPath}" does not exist in glob: "src/assets/**/*.{jpeg
     border-radius: 1.8125rem;
     background: #ffffffd9;
     backdrop-filter: blur(5.5px);
+
+    max-width: fit-content;
     }
 
     p {
@@ -61,6 +61,13 @@ throw new Error(    `"${imgPath}" does not exist in glob: "src/assets/**/*.{jpeg
         color: var(--heading-primary-color);
         font-style: normal;
         line-height: var(  --lineheight-step-3);
-        width: 41.75rem;
+
+        max-inline-size: 41rem;
     }
+
+    img {
+      align-self: stretch;
+      object-fit: cover;
+    }
+
 </style>

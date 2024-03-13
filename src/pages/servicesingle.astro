@@ -1,23 +1,19 @@
 ---
 import MainLayout from "../mainlayout/MainLayout.astro"
+import HeroHeader from "../components/HeroHeader.astro"
+
+import Title from "../components/Title.astro"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-	</head>
-	<body>
-	</body>
-</html>
-
-<body>
 	<MainLayout>
+		<HeroHeader imgPath="/src/assets/images/banner_servicesingle.jpg" name="banner ss" TitleText="Service single" variant="yellow" suptitle="Services Details"></HeroHeader>
+		
 
-	</MainLayout>
-</body>
+<style>
+	header, footer {
+		height: 70px;
+	}
+</style>
 
 <style>
 	header, footer {
