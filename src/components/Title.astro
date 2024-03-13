@@ -1,0 +1,38 @@
+---
+import "../styles/global.css"
+import "../styles/reset.css"
+
+const {TitleText, variant = "yellow"} = Astro.props;
+---
+
+<h1 data-background={variant}>{TitleText}</h1>
+
+<style>
+
+[data-background="yellow"] {
+    background: var(--heading-color-variant-1);
+    color: var(--heading-primary-color);
+}
+
+[data-background="green"] {
+    background: var(--heading-color-variant-2);
+    color: var(--site-bagground-color);
+}
+
+h1 {
+font-family: var(--copy-font);
+font-size: var(--font-size-step-1);
+font-style: normal;
+font-weight: 400;
+line-height: var(--lineheight-step-2);
+letter-spacing: var(--letter-spacing-step-1);
+text-transform: uppercase;
+
+display: inline-flex;
+padding: 0rem 0.9375rem;
+align-items: flex-start;
+gap: 0.625rem;
+border-radius: 1.25rem;
+}
+
+</style>

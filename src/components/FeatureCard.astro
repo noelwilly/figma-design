@@ -1,0 +1,100 @@
+---
+const {FeatureText, FeatureCopy} = Astro.props;
+---
+
+<article>
+    <div class="FeatureContent">
+    <svg width="54" height="53" viewBox="0 0 54 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Icon">
+<circle id="Background" cx="26.8889" cy="26.3889" r="26.3889" fill="#181818"/>
+<g id="Icon_2">
+<path id="Icon_3" d="M15.5518 32.0488L26.7056 38.5552L37.8595 32.0488" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon_4" d="M15.5518 26.4717L26.7056 32.9781L37.8595 26.4717" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon_5" d="M15.5518 20.8951L26.7056 27.4015L37.8595 20.8951L26.7056 14.3887L15.5518 20.8951Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</svg>
+    <h3>{FeatureText}</h3>
+    <p>{FeatureCopy}</p>
+    <p class="readmore">Read More</p>
+    <svg></svg>
+    </div>
+</article>
+
+<style>
+
+    :root {
+  --arrow-icon: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="%234EAF4E" d="M176.49 95.51a12 12 0 0 1 0 17l-56 56a12 12 0 0 1-17 0l-24-24a12 12 0 1 1 17-17L112 143l47.51-47.52a12 12 0 0 1 16.98.03M236 128A108 108 0 1 1 128 20a108.12 108.12 0 0 1 108 108m-24 0a84 84 0 1 0-84 84a84.09 84.09 0 0 0 84-84"/></svg>');
+}
+
+/* <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id="Vector" d="M1.5 7.27856H14.568M14.568 7.27856L9.22198 1.93262M14.568 7.27856L9.22198 12.6246" stroke="#141414" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg> */
+
+article {
+    display: flex;
+padding: 2.25rem 1.4375rem;
+align-items: flex-start;
+gap: 0.625rem;
+
+border-radius: 1.25rem;
+border: 1px solid #EAEAEA;
+
+background: #FFF;
+}
+
+svg {
+    width: 3.29863rem;
+height: 3.29863rem;
+}
+
+h3 {
+color: #181818;
+
+font-family: var(--headings-font);
+font-size: 1.25rem;
+font-style: normal;
+font-weight: 600;
+line-height: 116%; /* 1.45rem */
+}
+
+p {
+    width: 14.125rem;
+
+    color: #595566;
+font-family: var(--copy-font);
+font-size: 1rem;
+font-style: normal;
+font-weight: 400;
+line-height: 147.5%; /* 1.475rem */
+}
+
+.FeatureContent {
+display: flex;
+width: 14.125rem;
+flex-direction: column;
+align-items: flex-start;
+gap: 0.625rem;
+}
+
+.readmore {
+  display: flex;
+  align-items: center;
+  
+color: #181818;
+font-family: var(--copy-font);
+font-size: 1.125rem;
+font-style: normal;
+font-weight: 600;
+line-height: 160%; /* 1.8rem */
+}
+
+/* .readmore::after {
+  content: '';
+  flex-shrink: 0;
+  width: 1.6rem;
+  aspect-ratio: 1;
+  background: var(--arrow-icon) 50% 50% / contain no-repeat;
+} */
+
+</style>

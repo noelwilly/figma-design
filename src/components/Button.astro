@@ -1,0 +1,39 @@
+---
+import "../styles/global.css"
+import "../styles/reset.css"
+
+const {BtnText, variant = "yellow"} = Astro.props;
+---
+
+<h1 data-background={variant}>{BtnText}</h1>
+
+<style>
+
+[data-background="black"] {
+    background: var(--heading-primary-color);
+    color: var(--site-bagground-color);
+}
+
+[data-background="yellow"] {
+    background: var(--heading-color-variant-1);
+    color: var(--heading-primary-color);
+}
+
+h1 {
+color: #FFF;
+font-family: Lato;
+font-size: 1.125rem;
+font-style: normal;
+font-weight: 600;
+line-height: 160%; /* 1.8rem */
+border-radius: 2.625rem;
+
+display: flex;
+width: 10.4375rem;
+padding: 0.9375rem 2.125rem;
+align-items: flex-start;
+gap: 0.625rem;
+flex-shrink: 0;
+}
+
+</style>

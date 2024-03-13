@@ -1,0 +1,66 @@
+---
+import "../styles/global.css"
+import "../styles/reset.css"
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+import Title from "./Title.astro";
+
+const images = import.meta.glob<{ default: ImageMetadata }
+>(  "/src/assets/**/*.{jpeg,jpg,png,gif}");
+const { name, imgPath, suptitle, TitleText, variant } = Astro.props; if (!images[imgPath])  
+throw new Error(    `"${imgPath}" does not exist in glob: "src/assets/**/*.{jpeg,jpg,png,gif}"`  );
+---
+
+<section class="full">
+    <Image src={images[imgPath]()} alt={name} />
+    <div class="hero_box">
+    <Title TitleText={TitleText} {variant}></Title>
+    <p>{suptitle}</p>
+    </div>
+</section>
+
+<style>
+  section {
+    display: grid;
+    align-items: start;
+
+    > * {
+      grid-area: 1 / 1;
+    }
+    container: header / inline-size;
+  }
+
+    @container header (width < 1200px) {
+    .hero_box {
+      margin-inline-end: 20cqi;
+    }
+  }
+
+    .hero_box {
+    margin-inline-start: 19cqi;
+    margin-inline-end: 30cqi;
+    margin-block-start: 10cqi;
+
+    display: inline-flex;
+    /* padding: 3rem 3.75rem 3.625rem 3.75rem; */
+    padding: 3cqi 3.75cqi 3.625cqi 3.75cqi;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.625rem;
+
+    border-radius: 1.8125rem;
+    background: #ffffffd9;
+    backdrop-filter: blur(5.5px);
+    }
+
+    p {
+        font-family: var(--headings-font);
+        font-size: var(--font-size-step-4);
+        font-weight: var(--font-weight-step-2);
+        color: var(--heading-primary-color);
+        font-style: normal;
+        line-height: var(  --lineheight-step-3);
+        width: 41.75rem;
+    }
+</style>
