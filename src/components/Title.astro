@@ -19,6 +19,11 @@ const {TitleText, variant = "yellow"} = Astro.props;
     color: var(--site-bagground-color);
 }
 
+[data-background="black"] {
+    background: var(--heading-primary-color);
+    color: var(--site-bagground-color);
+}
+
 h1 {
 font-family: var(--copy-font);
 font-size: var(--font-size-step-1);
@@ -33,6 +38,7 @@ padding: 0rem 0.9375rem;
 align-items: flex-start;
 gap: 0.625rem;
 border-radius: 1.25rem;
+inline-size: fit-content;
 }
 
 </style>

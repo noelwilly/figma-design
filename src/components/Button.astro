@@ -5,7 +5,7 @@ import "../styles/reset.css"
 const {BtnText, variant = "yellow"} = Astro.props;
 ---
 
-<h1 data-background={variant}>{BtnText}</h1>
+<button data-background={variant}>{BtnText}</button>
 
 <style>
 
@@ -19,21 +19,19 @@ const {BtnText, variant = "yellow"} = Astro.props;
     color: var(--heading-primary-color);
 }
 
-h1 {
-color: #FFF;
-font-family: Lato;
-font-size: 1.125rem;
+button {
+font-family: var(--copy-font);
+font-size: var(--font-size-step-1);
 font-style: normal;
 font-weight: 600;
-line-height: 160%; /* 1.8rem */
-border-radius: 2.625rem;
+line-height: var(--lineheight-step-1);
 
-display: flex;
-width: 10.4375rem;
+display: inline-flex;
 padding: 0.9375rem 2.125rem;
 align-items: flex-start;
 gap: 0.625rem;
-flex-shrink: 0;
+border-radius: 2.625rem;
+inline-size: fit-content;
 }
 
 </style>

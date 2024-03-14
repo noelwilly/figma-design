@@ -33,12 +33,13 @@ throw new Error(    `"${imgPath}" does not exist in glob: "src/assets/**/*.{jpeg
 
     @container header (width < 1200px) {
     .hero_box {
-      margin-inline-end: 20cqi;
+      /* margin-inline-end: 20cqi; */
     }
   }
 
     .hero_box {
-    margin-inline: 15cqi;
+    /* margin-inline: 15cqi; */
+    margin-inline: max(1rem, 50% - 75rem / 2);
     margin-block-start: 8cqi;
     margin-block-end: 10cqi;
     display: inline-flex;

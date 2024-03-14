@@ -1,5 +1,6 @@
 ---
 import MainLayout from "../mainlayout/MainLayout.astro"
+import { Icon } from "astro-icon/components";
 
 import HeroHeader from "../components/HeroHeader.astro"
 import Title from "../components/Title.astro"
@@ -44,7 +45,7 @@ import Columns from "../components/Columns.astro"
 		</Columns>
 		</section>
 		
-		<section class="about-mid1">
+		<section class="about-mid1 full">
 					<Columns cols="2">
 			<article>
 		<Title TitleText="Growing with our Clients" variant="yellow"></Title>
@@ -70,29 +71,35 @@ import Columns from "../components/Columns.astro"
 			<Image class="videoimage" src={MyImage1} alt="videoimage"></Image>
 		</section>
 
-		<section class="about-mid3">
-		<article class="mid3-flex">
+		<section class="about-mid3 full">
+			<div class="wrapper">
+			<article>
 		<Title TitleText="Our Team" variant="yellow"></Title>
 		<h2>We champion the bold to achieve the extraordinary</h2>
 		<p>Ippsum is the result of synergy between our teams and our customers. Our company culture is focused on excellent productivity, customer satisfaction, respect for team.</p>
+			</article>
+			<article>
+				<Columns cols="3">
+		<PersonCard imgPath="/src/assets/images/personcard1.jpg" altText="person1" TitleText="CEO at Company" variant="yellow" PersonText="Sarah Jasmine" PersonCopy="Leverage agile frameworks to provide a robust synopsis for high level overviews."></PersonCard>
+		<PersonCard imgPath="/src/assets/images/personcard1.jpg" altText="person1" TitleText="CEO at Company" variant="yellow" PersonText="Sarah Jasmine" PersonCopy="Leverage agile frameworks to provide a robust synopsis for high level overviews."></PersonCard>
+		<PersonCard imgPath="/src/assets/images/personcard1.jpg" altText="person1" TitleText="CEO at Company" variant="yellow" PersonText="Sarah Jasmine" PersonCopy="Leverage agile frameworks to provide a robust synopsis for high level overviews."></PersonCard>
+	</Columns>		
 	</article>
-		<Columns cols="3">
-		<!-- <PersonCard PersonText="Sarah Jasmine" PersonCopy="Leverage agile frameworks to provide a robust synopsis for high level overviews."></PersonCard>
-		<PersonCard PersonText="John Carter" PersonCopy="Leverage agile frameworks to provide a robust synopsis for high level overviews."></PersonCard>
-		<PersonCard PersonText="Daisy Stella" PersonCopy="Leverage agile frameworks to provide a robust synopsis for high level overviews."></PersonCard>
-		</Columns> -->
-		</section>
-		<section class="about-bot">
+			</div>
+	</section>
+	<section class="about-bottom">
+		<div class="about-bot">
 			<article>
 			<Title TitleText="Book Now" variant="green"></Title>
 			<h2>Better Consult, Better Results</h2>
 			<p>Our software development agency has a growth up to 30% per each year. If you are result-oriented, not afraid to take initiative – drop us a note and join our team!</p>
 			<Button BtnText="+800 1234 654 " variant="yellow"></Button>
 			</article>
-			<article>
+		<article>
 	<Image class="aboutbot1" src={MyImage3} alt="about3"></Image>
 	<Image class="aboutbot2" src={MyImage4} alt="about4"></Image>
-			</article>
+		</article>
+		</div>
 		</section>
 	</MainLayout>
 
@@ -121,7 +128,7 @@ import Columns from "../components/Columns.astro"
 		font-style: normal;
 		font-weight: 400;
 		line-height: var(--lineheight-step-2);
-		width: 36.875rem;
+		max-width: 36.875rem;
 	}
 
 	ul {
@@ -140,7 +147,7 @@ import Columns from "../components/Columns.astro"
 		font-style: normal;
 		font-weight: 400;
 		line-height: var(--lineheight-step-1);
-		width: 32.4375rem;
+		max-width: 32.4375rem;
 	}
 
 	li:before {
@@ -159,23 +166,30 @@ import Columns from "../components/Columns.astro"
 
 	.about-top {
 		background: #FFF;
+		padding: 2.25rem 0;
 	}
 	.about-mid1 {
 		background: #F5F5F5;
 		display: flex;
-flex-direction: column;
-align-items: center;
-gap: 2.125rem;
+		flex-direction: column;
+		align-items: center;
+		gap: 2.125rem;
+		padding: 5.25rem 0;
+
+& article:last-child {
+	place-self: end;
+}
 	}
 
 	.about-mid2 {
-		display: inline-flex;
+display: inline-flex;
 flex-direction: column;
 align-items: center;
 gap: 0.625rem;
+padding: 5.25rem 0;
 
 h2 {
-		width: 29.875rem;
+max-width: 29.875rem;
 height: 6.625rem;
 
 color: #181818;
@@ -189,22 +203,21 @@ line-height: 116%; /* 3.2625rem */
 }
 
 p {
-	width: 45.75rem;
-
-	color: #595566;
+max-width: 45.75rem;
+color: #595566;
 
 text-align: center;
 font-family: var(--copy-font);
 font-size: 1rem;
 font-style: normal;
 font-weight: 400;
-line-height: 147.5%; /* 1.475rem */
+line-height: 1.475rem;
 }
 
 .videoimage {
-	width: 60.125rem;
-height: 23.0625rem;
-flex-shrink: 0;
+	max-width: 60.125rem;
+	height: 23.0625rem;
+	flex-shrink: 0;
 
 border-radius: 1.75rem;
 opacity: 0.8;
@@ -213,26 +226,22 @@ background: #181818;
 	}
 
 	.about-mid3 {
-		display: flex;
-width: 75rem;
-flex-direction: column;
-align-items: flex-start;
-gap: 2.75rem;
 background: #F5F5F5;
+padding: 4.25rem 0;
 
 h2 {
-	width: 31.125rem;
+	max-width: 31.125rem;
 color: #181818;
 
 font-family: var(--headings-font);
 font-size: 2.8125rem;
 font-style: normal;
 font-weight: 700;
-line-height: 116%; /* 3.2625rem */
+line-height: 3.2625rem;
 }
 
 p {
-width: 40.1875rem;
+max-width: 40.1875rem;
 
 color: #595566;
 
@@ -240,12 +249,28 @@ font-family: Lato;
 font-size: 1rem;
 font-style: normal;
 font-weight: 400;
-line-height: 147.5%; /* 1.475rem */
+line-height: 1.475rem;
+}
+
+ .wrapper {
+		display: grid;
+		grid-template-columns: 
+		[full-start] 1fr
+		[content-start] minmax(0, 75rem) [content-end]
+		1fr [full-end];
+		gap: 1rem;
+
+		> * {
+			grid-column: content;
+		}
 }
 	}
 
+	.about-bottom {
+		padding: 3.25rem 0;
+	}
 	.about-bot {
-width: 75.001rem;
+max-width: 75.001rem;
 height: 32.82831rem;
 flex-shrink: 0;
 border-radius: 1.875rem;
@@ -256,8 +281,13 @@ justify-content: center;
 align-items: center;
 gap: 4.5625rem;
 
+:first-child {
+	display: grid;
+	gap: 2rem;
+	grid-template-rows: repeat(1fr);
+}
 h2 {
-	width: 26.71306rem;
+max-width: 26.71306rem;
 height: 6.36463rem;
 
 color: #FFF;
@@ -265,11 +295,11 @@ font-family: var(--headings-font);
 font-size: 2.8125rem;
 font-style: normal;
 font-weight: 700;
-line-height: 116%; /* 3.2625rem */
+line-height: 3.2625rem;
 }
 
 p {
-	width: 26.44019rem;
+	max-width: 26.44019rem;
 height: 4.42775rem;
 
 color: #FFF;
@@ -277,17 +307,17 @@ font-family: var(--copy-font);
 font-size: 1rem;
 font-style: normal;
 font-weight: 400;
-line-height: 147.5%; /* 1.475rem */
+line-height: 1.475rem;
 }
 
 .aboutbot1 {
-	width: 28.89619rem;
+	max-width: 28.89619rem;
 height: 14.13581rem;
 flex-shrink: 0;
 }
 
 .aboutbot2 {
-width: 27.38431rem;
+max-width: 27.38431rem;
 height: 12.14506rem;
 flex-shrink: 0;
 }
